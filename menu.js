@@ -1,13 +1,1 @@
-
-const lista = document.querySelectorAll('.lista')
-
-function ativaLink(){
-    for(let i of lista){
-        i.classList.remove('ativo')
-    }
-    this.classList.add('ativo')
-}
-
-for(let i of lista){
-    i.addEventListener('click', ativaLink)
-}
+const buttons=[...document.querySelectorAll('.nav button')];const preview=document.querySelector('#preview');buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(item=>{item.classList.remove('active');item.removeAttribute('aria-current')});button.classList.add('active');button.setAttribute('aria-current','page');preview.innerHTML=`<strong>${button.dataset.label}</strong><span>${button.dataset.copy}</span>`;}));
